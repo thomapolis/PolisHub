@@ -5,13 +5,16 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import fr.thomapolis.polisapi.PolisPlayer;
 import fr.thomapolis.polishub.PolisHub;
 
 public class CommandMoney implements CommandExecutor {
 
-	
+	public PolisHub polisHub;
 	
 	public CommandMoney(PolisHub polisHub) {
+		
+		this.polisHub = polisHub;
 		
 	}
 
@@ -21,6 +24,9 @@ public class CommandMoney implements CommandExecutor {
 		if(sender instanceof Player) {
 			
 			Player player = (Player) sender;
+			PolisPlayer polisPlayer = polisHub.getAPI().getPolisPlayer(player);
+			
+			player.sendMessage(polisHub.getPrefix()+"Vous avez "+polisPlayer.getMoney()+" PolisCoins");
 			
 		}
 		

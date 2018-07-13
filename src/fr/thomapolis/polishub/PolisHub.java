@@ -19,6 +19,9 @@ public class PolisHub extends JavaPlugin {
 		//Init
 		setPrefix(ChatColor.GRAY+"["+ChatColor.GREEN+"PolisHub"+ChatColor.GRAY+"] ");
 		
+		//Register
+		registerCommands();
+		
 		getServer().getConsoleSender().sendMessage(getPrefix()+"PolisHub is enable !");
 		
 	}
@@ -37,6 +40,11 @@ public class PolisHub extends JavaPlugin {
 		
 		getCommand("money").setExecutor(new CommandMoney(this));
 		
+	}
+	
+	public PolisAPI getAPI() {
+		
+		return this.api;
 	}
 	
 }

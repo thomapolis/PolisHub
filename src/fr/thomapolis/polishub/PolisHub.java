@@ -6,6 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import fr.thomapolis.poliscore.PolisCore;
 import fr.thomapolis.polishub.commands.CommandMoney;
+import fr.thomapolis.polishub.listeners.ListenerPlayer;
 
 public class PolisHub extends JavaPlugin {
 
@@ -39,6 +40,12 @@ public class PolisHub extends JavaPlugin {
 	public void registerCommands() {
 		
 		getCommand("money").setExecutor(new CommandMoney(this));
+		
+	}
+	
+	public void registerEvents() {
+		
+		getServer().getPluginManager().registerEvents(new ListenerPlayer(this), this);
 		
 	}
 	

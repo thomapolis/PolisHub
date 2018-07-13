@@ -1,5 +1,6 @@
 package fr.thomapolis.polishub.listeners;
 
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -21,6 +22,8 @@ public class ListenerPlayer implements Listener {
 		
 		Player player = event.getPlayer();
 		PolisPlayer polisPlayer = polisHub.getAPI().getPolisPlayer(player);
+		
+		event.setJoinMessage(polisHub.getPrefix()+polisPlayer.getRank().getPrefix()+player.getName()+ChatColor.GOLD+" à rejoint le hub !");
 		
 	}
 

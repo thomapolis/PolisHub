@@ -4,6 +4,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 import fr.thomapolis.poliscore.polisclass.PolisPlayer;
@@ -28,6 +29,14 @@ public class ListenerPlayer implements Listener {
 		event.setJoinMessage(polisHub.getPrefix()+name+ChatColor.GOLD+" a rejoint le hub !");
 		player.setDisplayName(name);
 		player.setPlayerListName(name);
+		
+		
 	}
 
+	@EventHandler
+	public void onClickInventory(InventoryClickEvent event) {
+		
+		event.setCancelled(true);
+	}
+	
 }

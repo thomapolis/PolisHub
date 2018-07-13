@@ -22,6 +22,7 @@ public class PolisHub extends JavaPlugin {
 		
 		//Register
 		registerCommands();
+		registerEvents();
 		
 		getServer().getConsoleSender().sendMessage(getPrefix()+"PolisHub is enable !");
 		

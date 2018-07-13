@@ -23,7 +23,7 @@ public class ListenerPlayer implements Listener {
 		Player player = event.getPlayer();
 		PolisPlayer polisPlayer = polisHub.getAPI().getPolisPlayer(player);
 		
-		event.setJoinMessage(polisHub.getPrefix()+polisPlayer.getRank().getPrefix()+player.getName()+ChatColor.GOLD+" à rejoint le hub !");
+		event.setJoinMessage(polisHub.getPrefix()+polisPlayer.getRank().getPrefix()+player.getName()+ChatColor.GOLD+" a rejoint le hub !");
 		
 	}
 

@@ -1,0 +1,5 @@
+name: PolisHub
+version: 1.0
+author: thomapolis
+main: fr.thomapolis.polishub.PolisHub
+depends: [PolisCore]

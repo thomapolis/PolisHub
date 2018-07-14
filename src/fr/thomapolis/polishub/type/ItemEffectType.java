@@ -6,8 +6,8 @@ import java.util.List;
 import org.bukkit.inventory.ItemStack;
 
 import fr.thomapolis.polishub.itemseffect.IECosmetics;
-import fr.thomapolis.polishub.itemseffect.IETenuesRank;
 import fr.thomapolis.polishub.itemseffect.ItemEffect;
+import fr.thomapolis.polishub.itemseffect.leatherarmor.IETenuesRank;
 
 public class ItemEffectType	{
 

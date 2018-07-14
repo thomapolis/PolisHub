@@ -1,41 +1,45 @@
-package fr.thomapolis.polishub.itemseffect;
+package fr.thomapolis.polishub.itemseffect.leatherarmor;
 
 import java.util.List;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 
-public class IETenuesRank extends ItemEffect {
+import fr.thomapolis.polishub.itemseffect.ItemEffectLeatherArmor;
+import fr.thomapolis.polishub.type.ItemEffectArmorType;
+
+public class IETenuesRank extends ItemEffectLeatherArmor {
 
 	@Override
 	public String getName() {
-
-		return ChatColor.YELLOW+""+ChatColor.BOLD+"Tenues des grades";
+		
+		return ChatColor.LIGHT_PURPLE+""+ChatColor.BOLD+"Tenues des grades";
 	}
 
 	@Override
 	public Material getType() {
-		
-		return Material.LEATHER_CHESTPLATE;
+
+		return Material.LEATHER_LEGGINGS;
 	}
 
 	@Override
 	public int getAmount() {
-		// XXX Auto-generated method stub
-		return 0;
+
+		return 1;
 	}
 
 	@Override
 	public int getData() {
-		// XXX Auto-generated method stub
+
 		return 0;
 	}
 
 	@Override
 	public List<String> getLores() {
-		// XXX Auto-generated method stub
+		
 		return null;
 	}
 
@@ -53,8 +57,21 @@ public class IETenuesRank extends ItemEffect {
 
 	@Override
 	public void onClickInventory(Player player) {
-		// XXX Auto-generated method stub
+		
+		equip(player);
 
+	}
+
+	@Override
+	public Color getArmorColor() {
+		// XXX Auto-generated method stub
+		return Color.FUCHSIA;
+	}
+
+	@Override
+	public ItemEffectArmorType getArmorType() {
+		// XXX Auto-generated method stub
+		return ItemEffectArmorType.LEGGINGS;
 	}
 
 }

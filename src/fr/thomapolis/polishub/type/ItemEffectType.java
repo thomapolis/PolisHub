@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.bukkit.inventory.ItemStack;
 
+import fr.thomapolis.polishub.itemseffect.IEBackGUI;
+import fr.thomapolis.polishub.itemseffect.IECloseGUI;
 import fr.thomapolis.polishub.itemseffect.IECosmetics;
 import fr.thomapolis.polishub.itemseffect.ItemEffect;
 import fr.thomapolis.polishub.itemseffect.leatherarmor.IETenuesRank;
@@ -23,6 +25,8 @@ public class ItemEffectType	{
 		
 		this.items.add(new IECosmetics());
 		this.items.add(new IETenuesRank());
+		this.items.add(new IECloseGUI());
+		this.items.add(new IEBackGUI());
 		
 	}
 	

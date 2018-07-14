@@ -27,7 +27,7 @@ public class GUITenues extends GUI {
 		ItemMeta gM1 = g1.getItemMeta();
 		gM1.setDisplayName(" ");
 		g1.setItemMeta(gM1);
-		int[] g1S = new int[] {0,1,2,6,7,8,46,47,48,50,51,52,53};
+		int[] g1S = new int[] {0,1,2,6,7,8,46,47,48,50,51,52};
 		addItemInventory(inventory, g1, g1S);
 		
 	}

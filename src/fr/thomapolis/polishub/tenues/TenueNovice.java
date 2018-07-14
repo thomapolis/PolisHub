@@ -3,6 +3,10 @@ package fr.thomapolis.polishub.tenues;
 import org.bukkit.ChatColor;
 import org.bukkit.inventory.ItemStack;
 
+import fr.thomapolis.poliscore.cosmeticranks.CRNovice;
+import fr.thomapolis.poliscore.cosmeticranks.CosmeticRank;
+import fr.thomapolis.polishub.itemseffect.leatherarmor.IEACNovice;
+
 public class TenueNovice extends Tenue {
 
 	@Override
@@ -18,9 +22,17 @@ public class TenueNovice extends Tenue {
 	}
 
 	@Override
+	public CosmeticRank getRank() {
+		
+		return new CRNovice();
+	}
+	
+	@Override
 	public ItemStack getChestplate() {
 		
-		return null;
+		IEACNovice item = new IEACNovice();
+		
+		return item.getItem();
 	}
 
 	@Override
@@ -37,6 +49,30 @@ public class TenueNovice extends Tenue {
 
 	@Override
 	public ItemStack getIcon() {
+		// XXX Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ItemStack getChestplateLock() {
+		// XXX Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ItemStack getLeggingsLock() {
+		// XXX Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ItemStack getBootsLock() {
+		// XXX Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ItemStack getIconLock() {
 		// XXX Auto-generated method stub
 		return null;
 	}

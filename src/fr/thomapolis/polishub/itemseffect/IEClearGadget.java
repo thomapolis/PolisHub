@@ -7,6 +7,8 @@ import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 
+import fr.thomapolis.polishub.PolisHub;
+
 public class IEClearGadget extends ItemEffect {
 
 	@Override
@@ -58,6 +60,8 @@ public class IEClearGadget extends ItemEffect {
 			&& player.getInventory().getItem(6).getType() != null) {
 			
 			player.getInventory().remove(player.getInventory().getItem(6));
+			player.closeInventory();
+			player.sendMessage(PolisHub.getPrefix()+ChatColor.RED+"Votre gagdet a été enlevé");
 			
 		}
 

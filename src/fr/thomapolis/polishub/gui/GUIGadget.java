@@ -31,7 +31,7 @@ public class GUIGadget extends GUI {
 		ItemMeta gM1 = g1.getItemMeta();
 		gM1.setDisplayName(" ");
 		g1.setItemMeta(gM1);
-		int[] g1S = new int[] {0,1,2,6,7,8,9,17,18,26,27,35,36,44,46,47,48,50,51,52};
+		int[] g1S = new int[] {0,1,2,3,4,5,6,7,8,9,17,18,26,27,35,36,44,46,47,48,50,51,52};
 		addItemInventory(inventory, g1, g1S);
 		
 		IECloseGUI ieCG = new IECloseGUI();

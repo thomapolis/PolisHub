@@ -64,6 +64,13 @@ public class ListenerPlayer implements Listener {
 		
 		if(event.getCurrentItem() != null && event.getCurrentItem().getType() != null) {
 			
+			if(!event.getCurrentItem().hasItemMeta()) {
+				return;
+			}
+			if(!event.getCurrentItem().getItemMeta().hasDisplayName()) {
+				return;
+			}
+			
 			if(polisHub.getItemEffectType().isItemEffect(event.getCurrentItem())) {
 				
 				ItemEffect itemEffect = polisHub.getItemEffectType().getItemEffect(event.getCurrentItem());

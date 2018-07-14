@@ -11,6 +11,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 import fr.thomapolis.poliscore.polisclass.PolisPlayer;
 import fr.thomapolis.polishub.PolisHub;
+import fr.thomapolis.polishub.itemseffect.IECosmetics;
 import fr.thomapolis.polishub.itemseffect.ItemEffect;
 
 public class ListenerPlayer implements Listener {
@@ -26,12 +27,18 @@ public class ListenerPlayer implements Listener {
 		
 		Player player = event.getPlayer();
 		PolisPlayer polisPlayer = polisHub.getAPI().getPolisPlayer(player);
-		
 		String name = polisPlayer.getRank().getPrefix()+polisPlayer.getCosmeticRank().getPrefix()+" "+polisPlayer.getRank().getColorName()+player.getName();
+		
+		//ItemsHub
+		IECosmetics ieC = new IECosmetics();
+		
 		
 		event.setJoinMessage(polisHub.getPrefix()+name+ChatColor.GOLD+" a rejoint le hub !");
 		player.setDisplayName(name);
 		player.setPlayerListName(name);
+		
+		//Set inv
+		player.getInventory().setItem(8, ieC.getItem());
 		
 		
 	}

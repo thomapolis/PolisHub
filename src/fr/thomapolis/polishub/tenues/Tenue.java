@@ -28,7 +28,7 @@ public abstract class Tenue {
 	public ItemStack getItemLock(ItemStack item, CosmeticRank rank) {
 		
 		List<String> lores = new ArrayList<>();
-		lores.add(ChatColor.DARK_AQUA+"Cette tenue requière le CosmeticRank :"+ChatColor.GOLD+rank.getName());
+		lores.add(ChatColor.DARK_AQUA+"Cette tenue requière le CosmeticRank : "+ChatColor.GOLD+rank.getName());
 		
 		ItemMeta itemMeta = item.getItemMeta();
 		itemMeta.setLore(lores);

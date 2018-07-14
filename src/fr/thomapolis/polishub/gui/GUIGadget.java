@@ -7,6 +7,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import fr.thomapolis.polishub.itemseffect.IEBackGUI;
+import fr.thomapolis.polishub.itemseffect.IEClearGadget;
 import fr.thomapolis.polishub.itemseffect.IECloseGUI;
 
 public class GUIGadget extends GUI {
@@ -30,13 +31,14 @@ public class GUIGadget extends GUI {
 		ItemMeta gM1 = g1.getItemMeta();
 		gM1.setDisplayName(" ");
 		g1.setItemMeta(gM1);
-		int[] g1S = new int[] {0,1,2,6,7,8,46,47,48,50,51,52};
+		int[] g1S = new int[] {0,1,2,6,7,8,9,17,18,26,27,35,36,44,46,47,48,50,51,52};
 		addItemInventory(inventory, g1, g1S);
 		
 		IECloseGUI ieCG = new IECloseGUI();
 		inventory.setItem(45, ieCG.getItem());
 		
-
+		IEClearGadget ieCG2 = new IEClearGadget();
+		inventory.setItem(49, ieCG2.getItem());
 		
 		IEBackGUI ieBG = new IEBackGUI();
 		inventory.setItem(53, ieBG.getItem());

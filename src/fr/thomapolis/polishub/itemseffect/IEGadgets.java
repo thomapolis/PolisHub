@@ -7,6 +7,8 @@ import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 
+import fr.thomapolis.polishub.gui.GUIGadget;
+
 public class IEGadgets extends ItemEffect {
 
 	@Override
@@ -53,7 +55,9 @@ public class IEGadgets extends ItemEffect {
 
 	@Override
 	public void onClickInventory(Player player) {
-		// XXX Auto-generated method stub
+		
+		GUIGadget gui = new GUIGadget();
+		player.openInventory(gui.getInventory());
 
 	}
 

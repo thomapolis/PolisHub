@@ -6,6 +6,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import fr.thomapolis.polishub.itemseffect.IEGadgets;
 import fr.thomapolis.polishub.itemseffect.leatherarmor.IETenuesRank;
 
 public class GUICosmetics extends GUI {
@@ -48,6 +49,9 @@ public class GUICosmetics extends GUI {
 		
 		IETenuesRank tR = new IETenuesRank();
 		inventory.setItem(29, tR.getItem());
+		
+		IEGadgets ieG = new IEGadgets();
+		inventory.setItem(11, ieG.getItem());
 		
 	}
 

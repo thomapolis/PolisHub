@@ -2,6 +2,7 @@ package fr.thomapolis.polishub.itemseffect;
 
 import java.util.List;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -10,26 +11,26 @@ public class IEClearGadget extends ItemEffect {
 
 	@Override
 	public String getName() {
-		// XXX Auto-generated method stub
-		return null;
+		
+		return ChatColor.DARK_RED+"Enlever le votre gadget";
 	}
 
 	@Override
 	public Material getType() {
-		// XXX Auto-generated method stub
-		return null;
+
+		return Material.STAINED_GLASS;
 	}
 
 	@Override
 	public int getAmount() {
 		// XXX Auto-generated method stub
-		return 0;
+		return 1;
 	}
 
 	@Override
 	public int getData() {
 		// XXX Auto-generated method stub
-		return 0;
+		return 14;
 	}
 
 	@Override
@@ -52,7 +53,13 @@ public class IEClearGadget extends ItemEffect {
 
 	@Override
 	public void onClickInventory(Player player) {
-		// XXX Auto-generated method stub
+		
+		if(player.getInventory().getItem(6) != null 		
+			&& player.getInventory().getItem(6).getType() != null) {
+			
+			player.getInventory().remove(player.getInventory().getItem(6));
+			
+		}
 
 	}
 

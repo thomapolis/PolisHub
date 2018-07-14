@@ -1,6 +1,7 @@
 package fr.thomapolis.polishub.listeners;
 
 import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -52,8 +53,8 @@ public class ListenerPlayer implements Listener {
 			|| event.getClickedInventory().getType() == InventoryType.CREATIVE) {
 			
 			PolisPlayer polisPlayer = polisHub.getAPI().getPolisPlayer((Player) event.getWhoClicked());
-			if(!polisPlayer.getRank().getPerms().contains("hub.inventory")) {
-				
+			if(!polisPlayer.getRank().getPerms().contains("hub.inventory")
+				&& event.getWhoClicked().getGameMode() != GameMode.CREATIVE) {
 				event.setCancelled(true);
 				
 			}

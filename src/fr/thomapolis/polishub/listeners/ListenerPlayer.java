@@ -28,7 +28,7 @@ public class ListenerPlayer implements Listener {
 	public void onJoin(PlayerJoinEvent event) {
 		
 		Player player = event.getPlayer();
-		PolisPlayer polisPlayer = polisHub.getAPI().getPolisPlayer(player);
+		PolisPlayer polisPlayer = PolisHub.getAPI().getPolisPlayer(player);
 		String name = polisPlayer.getRank().getPrefix()+polisPlayer.getCosmeticRank().getPrefix()+" "+polisPlayer.getRank().getColorName()+player.getName();
 		
 		//ItemsHub
@@ -70,7 +70,7 @@ public class ListenerPlayer implements Listener {
 			|| event.getInventory().getType() == InventoryType.PLAYER
 			|| event.getInventory().getType() == InventoryType.CREATIVE) {
 			
-			PolisPlayer polisPlayer = polisHub.getAPI().getPolisPlayer(player);
+			PolisPlayer polisPlayer = PolisHub.getAPI().getPolisPlayer(player);
 			if(polisPlayer.getRank().getPerms().contains("hub.inventory")) {
 				
 				if(!player.getGameMode().equals(GameMode.CREATIVE)) {

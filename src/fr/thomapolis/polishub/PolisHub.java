@@ -14,7 +14,7 @@ public class PolisHub extends JavaPlugin {
 	private static String prefix;
 	
 	
-	private PolisCore api = (PolisCore) Bukkit.getServer().getPluginManager().getPlugin("PolisCore");
+	private static PolisCore api = (PolisCore) Bukkit.getServer().getPluginManager().getPlugin("PolisCore");
 	
 	private ItemEffectType ieType;
 	
@@ -56,9 +56,9 @@ public class PolisHub extends JavaPlugin {
 		
 	}
 	
-	public PolisCore getAPI() {
+	public static PolisCore getAPI() {
 		
-		return this.api;
+		return api;
 	}
 	
 	public ItemEffectType getItemEffectType() {

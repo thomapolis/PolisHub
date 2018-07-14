@@ -2,13 +2,17 @@ package fr.thomapolis.polishub.gui;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import fr.thomapolis.poliscore.polisclass.PolisPlayer;
+import fr.thomapolis.polishub.PolisHub;
 import fr.thomapolis.polishub.itemseffect.IEBackGUI;
 import fr.thomapolis.polishub.itemseffect.IEClearTenue;
 import fr.thomapolis.polishub.itemseffect.IECloseGUI;
+import fr.thomapolis.polishub.tenues.TenueNovice;
 
 public class GUITenues extends GUI {
 
@@ -42,6 +46,34 @@ public class GUITenues extends GUI {
 		
 		IEBackGUI ieBG = new IEBackGUI();
 		inventory.setItem(53, ieBG.getItem());
+		
+	}
+	
+	public void setTenueInInv(Inventory inv, Player player) {
+		
+		PolisPlayer polisPlayer = PolisHub.getAPI().getPolisPlayer(player);
+		
+		TenueNovice TN = new TenueNovice();
+		
+		ItemStack tNC = TN.getChestplateLock();
+		ItemStack tNL = TN.getLeggingsLock();
+		ItemStack tNB = TN.getBootsLock();
+		ItemStack tNI = TN.getIconLock();
+		
+		if(polisPlayer.getCosmeticRank().getCosmetics().contains(TN.getCosmeticId())) {
+			
+			tNC = TN.getChestplate();
+			tNL = TN.getLeggings();
+			tNB = TN.getBoots();
+			tNI = TN.getIcon();
+			
+		}
+		
+		inv.setItem(9, tNC);
+		inv.setItem(18, tNL);
+		inv.setItem(27, tNB);
+		inv.setItem(36, tNI);
+		
 	}
 
 }

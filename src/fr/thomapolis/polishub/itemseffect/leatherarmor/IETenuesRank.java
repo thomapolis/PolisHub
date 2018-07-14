@@ -7,6 +7,7 @@ import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 
 import fr.thomapolis.polishub.gui.GUITenues;
 import fr.thomapolis.polishub.itemseffect.ItemEffectLeatherArmor;
@@ -60,7 +61,9 @@ public class IETenuesRank extends ItemEffectLeatherArmor {
 	public void onClickInventory(Player player) {
 		
 		GUITenues gui = new GUITenues();
-		player.openInventory(gui.getInventory());
+		Inventory inv = gui.getInventory();
+		gui.setTenueInInv(inv, player);
+		player.openInventory(inv);
 
 	}
 

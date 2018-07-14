@@ -6,6 +6,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
@@ -46,7 +47,21 @@ public class ListenerPlayer implements Listener {
 	@EventHandler
 	public void onClickInventory(InventoryClickEvent event) {
 		
-		event.setCancelled(true);
+		if(event.getInventory().getType() != InventoryType.CREATIVE) {
+			event.setCancelled(true);
+		}
+		if(event.getClickedInventory().getType() == InventoryType.CHEST
+			|| event.getClickedInventory().getType() == InventoryType.PLAYER) {
+			
+			PolisPlayer polisPlayer = polisHub.getAPI().getPolisPlayer((Player) event.getWhoClicked());
+			if(!polisPlayer.getRank().getPerms().contains("hub.inventory")) {
+				
+				event.setCancelled(true);
+				
+			}
+		}
+		
+		
 	}
 	
 	@EventHandler

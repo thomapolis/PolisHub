@@ -4,6 +4,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -24,23 +25,30 @@ public class ListenerPlayer implements Listener {
 		this.polisHub = polisHub;
 	}
 	
-	@EventHandler
+	@EventHandler (priority = EventPriority.LOW)
 	public void onJoin(PlayerJoinEvent event) {
 		
 		Player player = event.getPlayer();
-		PolisPlayer polisPlayer = PolisHub.getAPI().getPolisPlayer(player);
-		String name = polisPlayer.getRank().getPrefix()+polisPlayer.getCosmeticRank().getPrefix()+" "+polisPlayer.getRank().getColorName()+player.getName();
 		
-		//ItemsHub
-		IECosmetics ieC = new IECosmetics();
+		if(PolisHub.getAPI().getSQL().hasAccount(player)) {
+			
+			PolisPlayer polisPlayer = PolisHub.getAPI().getPolisPlayer(player);
+			String name = polisPlayer.getRank().getPrefix()+polisPlayer.getCosmeticRank().getPrefix()+" "+polisPlayer.getRank().getColorName()+player.getName();
+			
+			//ItemsHub
+			IECosmetics ieC = new IECosmetics();
+			
+			
+			event.setJoinMessage(PolisHub.getPrefix()+name+ChatColor.GOLD+" a rejoint le hub !");
+			player.setDisplayName(name);
+			player.setPlayerListName(name);
+			
+			//Set inv
+			player.getInventory().setItem(8, ieC.getItem());
+			
+		}
 		
 		
-		event.setJoinMessage(PolisHub.getPrefix()+name+ChatColor.GOLD+" a rejoint le hub !");
-		player.setDisplayName(name);
-		player.setPlayerListName(name);
-		
-		//Set inv
-		player.getInventory().setItem(8, ieC.getItem());
 		
 		
 	}

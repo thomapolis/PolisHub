@@ -6,6 +6,7 @@ import java.util.List;
 import org.bukkit.inventory.ItemStack;
 
 import fr.thomapolis.polishub.itemseffect.IECosmetics;
+import fr.thomapolis.polishub.itemseffect.IETenuesRank;
 import fr.thomapolis.polishub.itemseffect.ItemEffect;
 
 public class ItemEffectType	{
@@ -21,6 +22,7 @@ public class ItemEffectType	{
 	public void register() {
 		
 		this.items.add(new IECosmetics());
+		this.items.add(new IETenuesRank());
 		
 	}
 	

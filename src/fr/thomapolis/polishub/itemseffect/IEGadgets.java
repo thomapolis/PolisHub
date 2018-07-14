@@ -24,7 +24,7 @@ public class IEGadgets extends ItemEffect {
 	@Override
 	public int getAmount() {
 		// XXX Auto-generated method stub
-		return 0;
+		return 1;
 	}
 
 	@Override

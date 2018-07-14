@@ -55,24 +55,10 @@ public class GUITenues extends GUI {
 		
 		TenueNovice TN = new TenueNovice();
 		
-		ItemStack tNC = TN.getChestplateLock();
-		ItemStack tNL = TN.getLeggingsLock();
-		ItemStack tNB = TN.getBootsLock();
-		ItemStack tNI = TN.getIconLock();
-		
-		if(polisPlayer.getCosmeticRank().getCosmetics().contains(TN.getCosmeticId())) {
-			
-			tNC = TN.getChestplate();
-			tNL = TN.getLeggings();
-			tNB = TN.getBoots();
-			tNI = TN.getIcon();
-			
-		}
-		
-		inv.setItem(9, tNC);
-		inv.setItem(18, tNL);
-		inv.setItem(27, tNB);
-		inv.setItem(36, tNI);
+		inv.setItem(9, TN.getChestplate(player));
+		inv.setItem(18, TN.getLeggings(player));
+		inv.setItem(27, TN.getBoots(player));
+		inv.setItem(36, TN.getIcon(player));
 		
 	}
 

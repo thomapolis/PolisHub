@@ -1,6 +1,7 @@
 package fr.thomapolis.polishub.tenues;
 
 import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import fr.thomapolis.poliscore.cosmeticranks.CRNovice;
@@ -31,59 +32,54 @@ public class TenueNovice extends Tenue {
 	}
 	
 	@Override
-	public ItemStack getChestplate() {
+	public ItemStack getChestplate(Player player) {
 		
 		IEACNovice item = new IEACNovice();
 		
+		if(isLock(player)) {
+			
+			return getItemLock(item.getItem(), getRank());
+		}
+		
 		return item.getItem();
 	}
 
 	@Override
-	public ItemStack getLeggings() {
+	public ItemStack getLeggings(Player player) {
 		
 		IEALNovice item = new IEALNovice();
 		
+		if(isLock(player)) {
+			
+			return getItemLock(item.getItem(), getRank());
+		}
+		
 		return item.getItem();
 	}
 
 	@Override
-	public ItemStack getBoots() {
+	public ItemStack getBoots(Player player) {
 		
 		IEABNovice item = new IEABNovice();
 		
+		if(isLock(player)) {
+			
+			return getItemLock(item.getItem(), getRank());
+		}
+		
 		return item.getItem();
 	}
 
 	@Override
-	public ItemStack getIcon() {
+	public ItemStack getIcon(Player player) {
 		
 		IEINovice item = new IEINovice();
 		
+		if(isLock(player)) {
+			
+			return getItemLock(item.getItem(), getRank());
+		}
+		
 		return item.getItem();
 	}
-
-	@Override
-	public ItemStack getChestplateLock() {
-		// XXX Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ItemStack getLeggingsLock() {
-		// XXX Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ItemStack getBootsLock() {
-		// XXX Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ItemStack getIconLock() {
-		// XXX Auto-generated method stub
-		return null;
-	}
-
 }

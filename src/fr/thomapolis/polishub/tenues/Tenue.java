@@ -1,8 +1,16 @@
 package fr.thomapolis.polishub.tenues;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import fr.thomapolis.poliscore.cosmeticranks.CosmeticRank;
+import fr.thomapolis.poliscore.polisclass.PolisPlayer;
+import fr.thomapolis.polishub.PolisHub;
 import fr.thomapolis.polishub.type.TenueType;
 
 public abstract class Tenue {
@@ -12,37 +20,32 @@ public abstract class Tenue {
 	public abstract String getName();
 	public abstract	String getCosmeticId();
 	public abstract CosmeticRank getRank();
-	public abstract ItemStack getChestplate();
-	public abstract ItemStack getLeggings();
-	public abstract ItemStack getBoots();
-	public abstract ItemStack getIcon();
-
-	public ItemStack getChestplateLock() {
+	public abstract ItemStack getChestplate(Player player);
+	public abstract ItemStack getLeggings(Player player);
+	public abstract ItemStack getBoots(Player player);
+	public abstract ItemStack getIcon(Player player);
+	
+	public ItemStack getItemLock(ItemStack item, CosmeticRank rank) {
 		
-		type = new TenueType();
+		List<String> lores = new ArrayList<>();
+		lores.add(ChatColor.DARK_AQUA+"Cette tenue requière le CosmeticRank :"+ChatColor.GOLD+rank.getName());
 		
-		return type.getItemLock(getChestplate(), getRank());
+		ItemMeta itemMeta = item.getItemMeta();
+		itemMeta.setLore(lores);
+		item.setItemMeta(itemMeta);
+		
+		return item;
 	}
 	
-	public ItemStack getLeggingsLock() {
+	public boolean isLock(Player player) {
 		
-		type = new TenueType();
+		PolisPlayer polisPlayer = PolisHub.getAPI().getPolisPlayer(player);
 		
-		return type.getItemLock(getLeggings(), getRank());
+		if(polisPlayer.getCosmeticRank().hasCosmetics(getCosmeticId())) {
+			
+			return true;
+		}
 		
+		return false;
 	}
-	public ItemStack getBootsLock() {
-		
-		type = new TenueType();
-		
-		return type.getItemLock(getBoots(), getRank());
-	}
-	
-	public ItemStack getIconLock() {
-		
-		type = new TenueType();
-		
-		return type.getItemLock(getIcon(), getRank());
-	}
-	
 }

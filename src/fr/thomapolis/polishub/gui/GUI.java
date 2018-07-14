@@ -2,6 +2,7 @@ package fr.thomapolis.polishub.gui;
 
 import org.bukkit.Bukkit;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
 
 public abstract class GUI {
 
@@ -15,5 +16,15 @@ public abstract class GUI {
 		setupInventory(inventory);
 		
 		return inventory;
+	}
+	
+	public void addItemInventory(Inventory inventory, ItemStack item, int[] slots) {
+		
+		for(int slot : slots) {
+			
+			inventory.setItem(slot, item);
+			
+		}
+		
 	}
 }

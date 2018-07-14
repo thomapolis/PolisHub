@@ -7,6 +7,8 @@ import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 
+import fr.thomapolis.polishub.gui.GUICosmetics;
+
 public class IECosmetics extends ItemEffect {
 
 	@Override
@@ -48,7 +50,8 @@ public class IECosmetics extends ItemEffect {
 	@Override
 	public void onInteract(Player player) {
 		
-		
+		GUICosmetics gui = new GUICosmetics();
+		player.openInventory(gui.getInventory());
 
 	}
 

@@ -7,18 +7,24 @@ import org.bukkit.plugin.java.JavaPlugin;
 import fr.thomapolis.poliscore.PolisCore;
 import fr.thomapolis.polishub.commands.CommandMoney;
 import fr.thomapolis.polishub.listeners.ListenerPlayer;
+import fr.thomapolis.polishub.type.ItemEffectType;
 
 public class PolisHub extends JavaPlugin {
 
 	private String prefix;
 	
+	
 	private PolisCore api = (PolisCore) Bukkit.getServer().getPluginManager().getPlugin("PolisCore");
+	
+	private ItemEffectType ieType;
 	
 	@Override
 	public void onEnable() {
 		
 		//Init
 		setPrefix(ChatColor.GRAY+"["+ChatColor.GREEN+"PolisHub"+ChatColor.GRAY+"] ");
+		ieType = new ItemEffectType();
+		
 		
 		//Register
 		registerCommands();
@@ -53,6 +59,11 @@ public class PolisHub extends JavaPlugin {
 	public PolisCore getAPI() {
 		
 		return this.api;
+	}
+	
+	public ItemEffectType getItemEffectType() {
+		
+		return this.ieType;
 	}
 	
 }

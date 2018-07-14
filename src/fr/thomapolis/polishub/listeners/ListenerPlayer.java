@@ -11,6 +11,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 import fr.thomapolis.poliscore.polisclass.PolisPlayer;
 import fr.thomapolis.polishub.PolisHub;
+import fr.thomapolis.polishub.itemseffect.ItemEffect;
 
 public class ListenerPlayer implements Listener {
 
@@ -48,6 +49,12 @@ public class ListenerPlayer implements Listener {
 			
 			if(event.getItem() != null && event.getItem().getType() != null) {
 				
+				if(polisHub.getItemEffectType().isItemEffect(event.getItem())) {
+					
+					ItemEffect itemEffect = polisHub.getItemEffectType().getItemEffect(event.getItem());
+					itemEffect.onInteract(event.getPlayer());
+					
+				}
 				
 			}
 			

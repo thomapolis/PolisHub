@@ -11,7 +11,7 @@ import fr.thomapolis.polishub.type.ItemEffectType;
 
 public class PolisHub extends JavaPlugin {
 
-	private String prefix;
+	private static String prefix;
 	
 	
 	private PolisCore api = (PolisCore) Bukkit.getServer().getPluginManager().getPlugin("PolisCore");
@@ -34,14 +34,14 @@ public class PolisHub extends JavaPlugin {
 		
 	}
 	
-	public String getPrefix() {
-		
-		return this.prefix;
+	public static String getPrefix() {
+
+		return prefix;
 	}
 	
-	public void setPrefix(String prefix) {
+	public void setPrefix(String prefix2) {
 		
-		this.prefix = prefix;
+		prefix = prefix2;
 	}
 	
 	public void registerCommands() {

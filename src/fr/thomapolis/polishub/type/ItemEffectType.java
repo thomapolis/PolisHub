@@ -6,6 +6,7 @@ import java.util.List;
 import org.bukkit.inventory.ItemStack;
 
 import fr.thomapolis.polishub.itemseffect.IEBackGUI;
+import fr.thomapolis.polishub.itemseffect.IEClearTenue;
 import fr.thomapolis.polishub.itemseffect.IECloseGUI;
 import fr.thomapolis.polishub.itemseffect.IECosmetics;
 import fr.thomapolis.polishub.itemseffect.ItemEffect;
@@ -27,6 +28,7 @@ public class ItemEffectType	{
 		this.items.add(new IETenuesRank());
 		this.items.add(new IECloseGUI());
 		this.items.add(new IEBackGUI());
+		this.items.add(new IEClearTenue());
 		
 	}
 	

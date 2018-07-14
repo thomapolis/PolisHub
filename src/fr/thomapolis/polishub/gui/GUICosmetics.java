@@ -37,7 +37,12 @@ public class GUICosmetics extends GUI {
 		int[] g2S = new int[] {3,4,5,10,16, 19, 25, 28, 34, 39, 40, 41};
 		addItemInventory(inventory, g2, g2S);
 		
-		
+		ItemStack g3 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte)3);
+		ItemMeta gM3 = g3.getItemMeta();
+		gM3.setDisplayName(" ");
+		g3.setItemMeta(gM3);
+		int[] g3S = new int[] {12, 14, 20, 21, 22, 23, 24, 30, 32, 38,39,40,41,42};
+		addItemInventory(inventory, g3, g3S);
 		
 	}
 

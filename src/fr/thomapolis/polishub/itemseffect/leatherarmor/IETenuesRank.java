@@ -67,7 +67,7 @@ public class IETenuesRank extends ItemEffectLeatherArmor {
 	@Override
 	public Color getArmorColor() {
 		// XXX Auto-generated method stub
-		return Color.PURPLE;
+		return Color.YELLOW;
 	}
 
 	@Override

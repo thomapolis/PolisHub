@@ -2,6 +2,7 @@ package fr.thomapolis.polishub.itemseffect.leatherarmor;
 
 import java.util.List;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -15,19 +16,19 @@ public class IEABNovice extends ItemEffectLeatherArmor {
 	@Override
 	public String getName() {
 
-		return null;
+		return ChatColor.GOLD+"Bottes du novice";
 	}
 
 	@Override
 	public Material getType() {
-		// XXX Auto-generated method stub
-		return null;
+		
+		return Material.LEATHER_BOOTS;
 	}
 
 	@Override
 	public int getAmount() {
 		// XXX Auto-generated method stub
-		return 0;
+		return 1;
 	}
 
 	@Override
@@ -56,20 +57,21 @@ public class IEABNovice extends ItemEffectLeatherArmor {
 
 	@Override
 	public void onClickInventory(Player player) {
-		// XXX Auto-generated method stub
+		
+		equip(player);
 
 	}
 
 	@Override
 	public Color getArmorColor() {
 		// XXX Auto-generated method stub
-		return null;
+		return Color.MAROON;
 	}
 
 	@Override
 	public ItemEffectArmorType getArmorType() {
 		// XXX Auto-generated method stub
-		return null;
+		return ItemEffectArmorType.BOOTS;
 	}
 
 }

@@ -53,7 +53,7 @@ public class ListenerPlayer implements Listener {
 		
 	}
 
-	@EventHandler
+	@EventHandler (priority = EventPriority.HIGH)
 	public void onClickInventory(InventoryClickEvent event) {
 		
 		Player player = (Player) event.getWhoClicked();

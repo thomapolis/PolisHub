@@ -56,7 +56,9 @@ public class IEClearTenue extends ItemEffect {
 	@Override
 	public void onClickInventory(Player player) {
 		
-		player.getEquipment().clear();
+		player.getEquipment().setChestplate(null);
+		player.getEquipment().setLeggings(null);
+		player.getEquipment().setBoots(null);
 		player.closeInventory();
 		player.sendMessage(PolisHub.getPrefix()+ChatColor.RED+"Vous avez enlevé votre tenue !");
 

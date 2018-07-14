@@ -24,7 +24,7 @@ public class CommandMoney implements CommandExecutor {
 		if(sender instanceof Player) {
 			
 			Player player = (Player) sender;
-			PolisPlayer polisPlayer = polisHub.getAPI().getPolisPlayer(player);
+			PolisPlayer polisPlayer = PolisHub.getAPI().getPolisPlayer(player);
 			
 			player.sendMessage(PolisHub.getPrefix()+"Vous avez "+polisPlayer.getMoney()+" PolisCoins");
 			

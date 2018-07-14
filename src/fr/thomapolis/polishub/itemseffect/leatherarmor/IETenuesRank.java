@@ -58,7 +58,7 @@ public class IETenuesRank extends ItemEffectLeatherArmor {
 	@Override
 	public void onClickInventory(Player player) {
 		
-		equip(player);
+		
 
 	}
 

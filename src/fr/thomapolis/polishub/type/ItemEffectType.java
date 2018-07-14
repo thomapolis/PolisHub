@@ -9,6 +9,7 @@ import fr.thomapolis.polishub.itemseffect.IEBackGUI;
 import fr.thomapolis.polishub.itemseffect.IEClearTenue;
 import fr.thomapolis.polishub.itemseffect.IECloseGUI;
 import fr.thomapolis.polishub.itemseffect.IECosmetics;
+import fr.thomapolis.polishub.itemseffect.IEINovice;
 import fr.thomapolis.polishub.itemseffect.ItemEffect;
 import fr.thomapolis.polishub.itemseffect.leatherarmor.IEABNovice;
 import fr.thomapolis.polishub.itemseffect.leatherarmor.IEACNovice;
@@ -36,6 +37,7 @@ public class ItemEffectType	{
 		this.items.add(new IEACNovice());
 		this.items.add(new IEALNovice());
 		this.items.add(new IEABNovice());
+		this.items.add(new IEINovice());
 		
 	}
 	

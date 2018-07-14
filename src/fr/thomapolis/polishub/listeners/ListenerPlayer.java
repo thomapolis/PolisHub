@@ -35,7 +35,7 @@ public class ListenerPlayer implements Listener {
 		IECosmetics ieC = new IECosmetics();
 		
 		
-		event.setJoinMessage(polisHub.getPrefix()+name+ChatColor.GOLD+" a rejoint le hub !");
+		event.setJoinMessage(PolisHub.getPrefix()+name+ChatColor.GOLD+" a rejoint le hub !");
 		player.setDisplayName(name);
 		player.setPlayerListName(name);
 		

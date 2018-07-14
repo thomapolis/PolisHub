@@ -50,6 +50,10 @@ public class ListenerPlayer implements Listener {
 		
 		Player player = (Player) event.getWhoClicked();
 		
+		if(event.getInventory() == null) {
+			return;
+		}
+		
 		if(event.getCurrentItem() != null && event.getCurrentItem().getType() != null) {
 			
 			if(polisHub.getItemEffectType().isItemEffect(event.getCurrentItem())) {

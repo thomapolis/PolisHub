@@ -47,11 +47,9 @@ public class ListenerPlayer implements Listener {
 	@EventHandler
 	public void onClickInventory(InventoryClickEvent event) {
 		
-		if(event.getInventory().getType() != InventoryType.CREATIVE) {
-			event.setCancelled(true);
-		}
 		if(event.getClickedInventory().getType() == InventoryType.CHEST
-			|| event.getClickedInventory().getType() == InventoryType.PLAYER) {
+			|| event.getClickedInventory().getType() == InventoryType.PLAYER
+			|| event.getClickedInventory().getType() == InventoryType.CREATIVE) {
 			
 			PolisPlayer polisPlayer = polisHub.getAPI().getPolisPlayer((Player) event.getWhoClicked());
 			if(!polisPlayer.getRank().getPerms().contains("hub.inventory")) {

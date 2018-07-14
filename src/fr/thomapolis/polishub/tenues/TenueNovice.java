@@ -6,6 +6,7 @@ import org.bukkit.inventory.ItemStack;
 import fr.thomapolis.poliscore.cosmeticranks.CRNovice;
 import fr.thomapolis.poliscore.cosmeticranks.CosmeticRank;
 import fr.thomapolis.polishub.itemseffect.leatherarmor.IEACNovice;
+import fr.thomapolis.polishub.itemseffect.leatherarmor.IEALNovice;
 
 public class TenueNovice extends Tenue {
 
@@ -37,8 +38,10 @@ public class TenueNovice extends Tenue {
 
 	@Override
 	public ItemStack getLeggings() {
-		// XXX Auto-generated method stub
-		return null;
+		
+		IEALNovice item = new IEALNovice();
+		
+		return item.getItem();
 	}
 
 	@Override

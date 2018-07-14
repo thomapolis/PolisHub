@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -15,7 +16,8 @@ public abstract class ItemEffect {
 	public abstract int getData();
 	public abstract List<String> getLores();
 	public abstract Enchantment getEnchantement();
-	
+	public abstract void onInteract(Player player);
+	public abstract void onClickInventory(Player player);
 	
 	public ItemStack getItem() {
 		

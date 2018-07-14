@@ -9,6 +9,7 @@ import fr.thomapolis.polishub.itemseffect.IEBackGUI;
 import fr.thomapolis.polishub.itemseffect.IEClearTenue;
 import fr.thomapolis.polishub.itemseffect.IECloseGUI;
 import fr.thomapolis.polishub.itemseffect.IECosmetics;
+import fr.thomapolis.polishub.itemseffect.IEGadgets;
 import fr.thomapolis.polishub.itemseffect.IEINovice;
 import fr.thomapolis.polishub.itemseffect.ItemEffect;
 import fr.thomapolis.polishub.itemseffect.leatherarmor.IEABNovice;
@@ -30,6 +31,7 @@ public class ItemEffectType	{
 		
 		this.items.add(new IECosmetics());
 		this.items.add(new IETenuesRank());
+		this.items.add(new IEGadgets());
 		this.items.add(new IECloseGUI());
 		this.items.add(new IEBackGUI());
 		this.items.add(new IEClearTenue());

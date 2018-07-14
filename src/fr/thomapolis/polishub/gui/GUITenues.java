@@ -6,6 +6,10 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import fr.thomapolis.polishub.itemseffect.IEBackGUI;
+import fr.thomapolis.polishub.itemseffect.IEClearTenue;
+import fr.thomapolis.polishub.itemseffect.IECloseGUI;
+
 public class GUITenues extends GUI {
 
 	@Override
@@ -30,6 +34,14 @@ public class GUITenues extends GUI {
 		int[] g1S = new int[] {0,1,2,6,7,8,46,47,48,50,51,52};
 		addItemInventory(inventory, g1, g1S);
 		
+		IECloseGUI ieCG = new IECloseGUI();
+		inventory.setItem(45, ieCG.getItem());
+		
+		IEClearTenue ieCT = new IEClearTenue();
+		inventory.setItem(49, ieCT.getItem());
+		
+		IEBackGUI ieBG = new IEBackGUI();
+		inventory.setItem(53, ieBG.getItem());
 	}
 
 }

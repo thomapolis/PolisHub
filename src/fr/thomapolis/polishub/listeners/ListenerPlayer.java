@@ -48,16 +48,20 @@ public class ListenerPlayer implements Listener {
 	@EventHandler
 	public void onClickInventory(InventoryClickEvent event) {
 		
-		if(event.getClickedInventory().getType() == InventoryType.CHEST
-			|| event.getClickedInventory().getType() == InventoryType.PLAYER
-			|| event.getClickedInventory().getType() == InventoryType.CREATIVE) {
+		Player player = (Player) event.getWhoClicked();
+		
+		if(event.getInventory().getType() == InventoryType.CHEST
+			|| event.getInventory().getType() == InventoryType.PLAYER
+			|| event.getInventory().getType() == InventoryType.CREATIVE) {
 			
-			PolisPlayer polisPlayer = polisHub.getAPI().getPolisPlayer((Player) event.getWhoClicked());
-			if(!polisPlayer.getRank().getPerms().contains("hub.inventory")
-				&& event.getWhoClicked().getGameMode() != GameMode.CREATIVE) {
-				event.setCancelled(true);
+			PolisPlayer polisPlayer = polisHub.getAPI().getPolisPlayer(player);
+			if(polisPlayer.getRank().getPerms().contains("hub.inventory")) {
 				
-			}
+				if(!player.getGameMode().equals(GameMode.CREATIVE)) {
+					
+					event.setCancelled(true);
+				}
+			} else {event.setCancelled(true);}
 		}
 		
 		

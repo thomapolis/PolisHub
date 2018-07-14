@@ -61,6 +61,7 @@ public class ListenerPlayer implements Listener {
 					ItemEffect itemEffect = polisHub.getItemEffectType().getItemEffect(event.getItem());
 					itemEffect.onInteract(event.getPlayer());
 					
+					event.setCancelled(true);
 				}
 				
 			}

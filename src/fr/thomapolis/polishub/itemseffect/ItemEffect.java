@@ -24,7 +24,9 @@ public abstract class ItemEffect {
 		ItemStack item = new ItemStack(getType(), getAmount(), (byte)getData());
 		ItemMeta itemMeta = item.getItemMeta();
 		itemMeta.setUnbreakable(true);
-		itemMeta.addEnchant(getEnchantement(), 1, true);
+		if(getEnchantement() != null) {
+			itemMeta.addEnchant(getEnchantement(), 1, true);
+		}
 		itemMeta.setDisplayName(getName());
 		itemMeta.setLore(getLores());
 		item.setItemMeta(itemMeta);

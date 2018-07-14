@@ -41,7 +41,7 @@ public abstract class Tenue {
 		
 		PolisPlayer polisPlayer = PolisHub.getAPI().getPolisPlayer(player);
 		
-		if(polisPlayer.getCosmeticRank().hasCosmetics(getCosmeticId())) {
+		if(!polisPlayer.getCosmeticRank().hasCosmetics(getCosmeticId())) {
 			
 			return true;
 		}

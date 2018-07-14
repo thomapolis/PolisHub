@@ -9,6 +9,7 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 
 import fr.thomapolis.polishub.itemseffect.ItemEffectLeatherArmor;
+import fr.thomapolis.polishub.tenues.TenueNovice;
 import fr.thomapolis.polishub.type.ItemEffectArmorType;
 
 public class IEACNovice extends ItemEffectLeatherArmor {
@@ -70,9 +71,10 @@ public class IEACNovice extends ItemEffectLeatherArmor {
 	@Override
 	public void onClickInventory(Player player) {
 		
-		equip(player);
+		TenueNovice tenue = new TenueNovice();
 		
+		if(!tenue.isLock(player)) {
+			equip(player);
+		}
 	}
-
-	
 }

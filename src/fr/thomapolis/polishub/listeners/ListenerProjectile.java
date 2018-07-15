@@ -3,6 +3,7 @@ package fr.thomapolis.polishub.listeners;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.entity.ProjectileLaunchEvent;
 import org.bukkit.inventory.ItemStack;
 
@@ -53,6 +54,17 @@ public class ListenerProjectile implements Listener {
 				}
 				
 			}
+			
+		}
+		
+	}
+	
+	@EventHandler
+	public void onProjectileHit(ProjectileHitEvent event) {
+		
+		if(polishub.getProjectileType().isProjectile(event.getEntity())) {
+			
+			polishub.getProjectileType().getProjectileGadet(event.getEntity()).getEffect(event.getEntity().getLocation(), polishub);
 			
 		}
 		

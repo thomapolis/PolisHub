@@ -110,6 +110,11 @@ public class ListenerPlayer implements Listener {
 					return;
 				}
 				
+				if(!event.getItem().getItemMeta().hasDisplayName()) {
+					
+					return;
+				}
+				
 				if(polisHub.getItemEffectType().isItemEffect(event.getItem())) {
 					
 					ItemEffect itemEffect = polisHub.getItemEffectType().getItemEffect(event.getItem());
@@ -118,8 +123,11 @@ public class ListenerPlayer implements Listener {
 					event.setCancelled(true);
 				}
 				
-				
-				
+				if(polisHub.getGadgetType().isGadget(event.getItem())) {
+					
+					polisHub.getGadgetType().useGadget(event.getItem(), event.getPlayer());
+					
+				}
 			}
 			
 		}

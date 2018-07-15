@@ -8,18 +8,18 @@ import fr.thomapolis.poliscore.cosmeticranks.CosmeticRank;
 
 public abstract class Gadget {
 
-	public abstract String name();
+	public abstract String getName();
 	   
-    public abstract ItemStack item();
+    public abstract ItemStack getItem();
    
-    public abstract int cooldown();
+    public abstract int getCooldown();
    
     public abstract void onInteract(Player player);
    
     public void give(Player player){
-        ItemStack it = item();
+        ItemStack it = getItem();
         ItemMeta iM = it.getItemMeta();
-        iM.setDisplayName(name());
+        iM.setDisplayName(getName());
         it.setItemMeta(iM);
         player.getInventory().setItem(8, it);
     }

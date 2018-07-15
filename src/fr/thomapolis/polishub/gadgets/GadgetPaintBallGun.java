@@ -9,19 +9,19 @@ import fr.thomapolis.poliscore.cosmeticranks.CosmeticRank;
 public class GadgetPaintBallGun extends Gadget {
 
 	@Override
-	public String name() {
+	public String getName() {
 
 		return ChatColor.GRAY+"PaintBallGun";
 	}
 
 	@Override
-	public ItemStack item() {
+	public ItemStack getItem() {
 		// XXX Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public int cooldown() {
+	public int getCooldown() {
 		// XXX Auto-generated method stub
 		return 0;
 	}

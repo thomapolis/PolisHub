@@ -32,7 +32,7 @@ public class GadgetType {
 		
 		for(Gadget gadget : gadgets) {
 			
-			if(gadget.name().equals(it.getItemMeta().getDisplayName())) {
+			if(gadget.getName().equals(it.getItemMeta().getDisplayName())) {
 				
 				return true;
 			}
@@ -44,9 +44,9 @@ public class GadgetType {
 	
 	public void useGadget(ItemStack it, Player player) {
        
-		gadgets.stream().filter(gadget -> it.hasItemMeta() && it.getItemMeta().hasDisplayName() && it.getItemMeta().getDisplayName().equalsIgnoreCase(gadget.name())).forEach(gadget -> {
+		gadgets.stream().filter(gadget -> it.hasItemMeta() && it.getItemMeta().hasDisplayName() && it.getItemMeta().getDisplayName().equalsIgnoreCase(gadget.getName())).forEach(gadget -> {
            
-            int cooldowntime = gadget.cooldown();
+            int cooldowntime = gadget.getCooldown();
             if(cooldowns.containsKey(player.getName())){
                
                 long secondleft = ((cooldowns.get(player.getName()) / 1000) + cooldowntime) - (System.currentTimeMillis() / 1000);

@@ -28,7 +28,7 @@ public class ProjectileGadgetType {
 		
 		for(ProjectileGadget pG : projectiles) {
 			
-			if(pG.getName().equals(entity.getName())) {
+			if(pG.getName().equals(entity.getCustomName())) {
 				
 				return true;
 			}
@@ -42,7 +42,7 @@ public class ProjectileGadgetType {
 		
 		for(ProjectileGadget pG : projectiles) {
 			
-			if(pG.getName().equals(entity.getName())) {
+			if(pG.getName().equals(entity.getCustomName())) {
 				
 				return pG;
 			}

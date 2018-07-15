@@ -1,5 +1,6 @@
 package fr.thomapolis.polishub.listeners;
 
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -62,9 +63,11 @@ public class ListenerProjectile implements Listener {
 	@EventHandler
 	public void onProjectileHit(ProjectileHitEvent event) {
 		
+		Location loc = event.getHitBlock().getLocation();
+		
 		if(polishub.getProjectileType().isProjectile(event.getEntity())) {
 			
-			polishub.getProjectileType().getProjectileGadet(event.getEntity()).getEffect(event.getEntity().getLocation(), polishub);
+			polishub.getProjectileType().getProjectileGadet(event.getEntity()).getEffect(loc, polishub);
 			
 		}
 		

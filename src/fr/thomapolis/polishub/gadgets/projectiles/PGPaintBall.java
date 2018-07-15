@@ -29,7 +29,7 @@ public class PGPaintBall extends ProjectileGadget {
 		if(location.getBlock().getType() != null) {
 			
 			Material type = location.getBlock().getType();
-			location.getBlock().setType(Material.STAINED_CLAY);
+			location.getBlock().setType(Material.WOOL);
 			
 			Bukkit.getScheduler().scheduleSyncDelayedTask(polishub, new Runnable() {
 				
@@ -37,7 +37,7 @@ public class PGPaintBall extends ProjectileGadget {
 				public void run() {
 					
 					location.getBlock().setType(type);
-					
+					location.getBlock().setData((byte)14);
 				}
 			}, 40);
 			

@@ -78,4 +78,8 @@ public class PolisHub extends JavaPlugin {
 		return this.gadgeType;
 	}
 	
+	public ProjectileGadgetType getProjectileType() {
+		
+		return this.pgType;
+	}
 }

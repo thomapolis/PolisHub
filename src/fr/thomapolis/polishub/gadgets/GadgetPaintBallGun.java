@@ -12,6 +12,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import fr.thomapolis.poliscore.cosmeticranks.CRNovice;
 import fr.thomapolis.poliscore.cosmeticranks.CosmeticRank;
+import fr.thomapolis.polishub.gadgets.projectiles.PGPaintBall;
+import fr.thomapolis.polishub.gadgets.projectiles.ProjectileGadget;
 
 public class GadgetPaintBallGun extends Gadget {
 
@@ -61,6 +63,12 @@ public class GadgetPaintBallGun extends Gadget {
 	public CosmeticRank getCosmeticRank() {
 
 		return new CRNovice();
+	}
+	
+	@Override
+	public ProjectileGadget getProjectile() {
+		
+		return new PGPaintBall();
 	}
 
 }

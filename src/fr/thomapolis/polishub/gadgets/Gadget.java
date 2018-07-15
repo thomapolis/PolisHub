@@ -5,6 +5,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import fr.thomapolis.poliscore.cosmeticranks.CosmeticRank;
+import fr.thomapolis.polishub.gadgets.projectiles.ProjectileGadget;
 
 public abstract class Gadget {
 
@@ -26,5 +27,15 @@ public abstract class Gadget {
     
     public abstract int getCosmeticId();
     public abstract CosmeticRank getCosmeticRank();
+	public abstract ProjectileGadget getProjectile();
 	
+	public boolean hasProjectile() {
+		
+		if(getProjectile() != null) {
+			
+			return true;
+		}
+		
+		return false;
+	}
 }

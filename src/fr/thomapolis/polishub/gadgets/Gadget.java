@@ -28,6 +28,7 @@ public abstract class Gadget {
         iM.setDisplayName(getName());
         it.setItemMeta(iM);
         player.getInventory().setItem(6, it);
+        player.closeInventory();
     }
     
     public abstract String getCosmeticId();

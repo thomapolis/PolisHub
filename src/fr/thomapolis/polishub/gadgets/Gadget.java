@@ -4,6 +4,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import fr.thomapolis.poliscore.cosmeticranks.CosmeticRank;
+
 public abstract class Gadget {
 
 	public abstract String name();
@@ -21,5 +23,8 @@ public abstract class Gadget {
         it.setItemMeta(iM);
         player.getInventory().setItem(8, it);
     }
+    
+    public abstract int getCosmeticId();
+    public abstract CosmeticRank getCosmeticRank();
 	
 }

@@ -7,6 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import fr.thomapolis.poliscore.PolisCore;
 import fr.thomapolis.polishub.commands.CommandMoney;
 import fr.thomapolis.polishub.listeners.ListenerPlayer;
+import fr.thomapolis.polishub.listeners.ListenerProjectile;
 import fr.thomapolis.polishub.type.GadgetType;
 import fr.thomapolis.polishub.type.ItemEffectType;
 
@@ -56,6 +57,7 @@ public class PolisHub extends JavaPlugin {
 	public void registerEvents() {
 		
 		getServer().getPluginManager().registerEvents(new ListenerPlayer(this), this);
+		getServer().getPluginManager().registerEvents(new ListenerProjectile(this), this);
 		
 	}
 	

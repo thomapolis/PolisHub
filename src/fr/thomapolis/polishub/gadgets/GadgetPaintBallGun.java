@@ -10,6 +10,7 @@ import org.bukkit.entity.Snowball;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import fr.thomapolis.poliscore.cosmeticranks.CRNovice;
 import fr.thomapolis.poliscore.cosmeticranks.CosmeticRank;
 
 public class GadgetPaintBallGun extends Gadget {
@@ -53,13 +54,13 @@ public class GadgetPaintBallGun extends Gadget {
 	@Override
 	public int getCosmeticId() {
 		// XXX Auto-generated method stub
-		return 0;
+		return 2;
 	}
 
 	@Override
 	public CosmeticRank getCosmeticRank() {
-		// XXX Auto-generated method stub
-		return null;
+
+		return new CRNovice();
 	}
 
 }

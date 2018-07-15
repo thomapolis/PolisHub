@@ -54,9 +54,9 @@ public class GadgetPaintBallGun extends Gadget {
 	}
 
 	@Override
-	public int getCosmeticId() {
+	public String getCosmeticId() {
 		// XXX Auto-generated method stub
-		return 2;
+		return "2";
 	}
 
 	@Override

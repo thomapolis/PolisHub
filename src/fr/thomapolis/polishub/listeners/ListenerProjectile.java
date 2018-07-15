@@ -7,6 +7,7 @@ import org.bukkit.event.entity.ProjectileLaunchEvent;
 import org.bukkit.inventory.ItemStack;
 
 import fr.thomapolis.polishub.PolisHub;
+import fr.thomapolis.polishub.gadgets.Gadget;
 
 public class ListenerProjectile implements Listener {
 
@@ -37,7 +38,12 @@ public class ListenerProjectile implements Listener {
 						
 						if(polishub.getGadgetType().isGadget(item)) {
 							
-							if()
+							Gadget gadget = polishub.getGadgetType().getGadget(item);
+							
+							if(gadget.hasProjectile()) {
+								
+								gadget.getProjectile().setup(event.getEntity());
+							}
 							
 						}
 						

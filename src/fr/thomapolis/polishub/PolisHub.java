@@ -10,6 +10,7 @@ import fr.thomapolis.polishub.listeners.ListenerPlayer;
 import fr.thomapolis.polishub.listeners.ListenerProjectile;
 import fr.thomapolis.polishub.type.GadgetType;
 import fr.thomapolis.polishub.type.ItemEffectType;
+import fr.thomapolis.polishub.type.ProjectileGadgetType;
 
 public class PolisHub extends JavaPlugin {
 
@@ -20,6 +21,7 @@ public class PolisHub extends JavaPlugin {
 	
 	private ItemEffectType ieType;
 	private GadgetType gadgeType;
+	private ProjectileGadgetType pgType;
 	
 	@Override
 	public void onEnable() {
@@ -28,7 +30,7 @@ public class PolisHub extends JavaPlugin {
 		setPrefix(ChatColor.GRAY+"["+ChatColor.GREEN+"PolisHub"+ChatColor.GRAY+"] ");
 		ieType = new ItemEffectType();
 		gadgeType = new GadgetType();
-		
+		pgType = new ProjectileGadgetType();
 		
 		//Register
 		registerCommands();

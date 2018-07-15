@@ -79,6 +79,17 @@ public class ListenerPlayer implements Listener {
 				event.setCancelled(true);
 			}
 			
+			if(event.getInventory().getTitle().equalsIgnoreCase(ChatColor.AQUA+""+ChatColor.BOLD+"Gadgets")) {
+				
+				if(polisHub.getGadgetType().isGadget(event.getCurrentItem())) {
+					
+					if(!polisHub.getGadgetType().getGadget(event.getCurrentItem()).isLock(PolisHub.getAPI().getPolisPlayer(player))) {
+						
+						polisHub.getGadgetType().getGadget(event.getCurrentItem()).give(player);
+					}
+				}
+			}
+			
 		}
 		
 		if(event.getInventory().getType() == InventoryType.CHEST

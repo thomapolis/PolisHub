@@ -27,6 +27,20 @@ public class GadgetType {
 		
 	}
 	
+	public boolean isGadget(ItemStack it) {
+		
+		for(Gadget gadget : gadgets) {
+			
+			if(gadget.name().equals(it.getItemMeta().getDisplayName())) {
+				
+				return true;
+			}
+			
+		}
+			
+		return false;
+	}
+	
 	public void useGadget(ItemStack it, Player player) {
        
 		gadgets.stream().filter(gadget -> it.hasItemMeta() && it.getItemMeta().hasDisplayName() && it.getItemMeta().getDisplayName().equalsIgnoreCase(gadget.name())).forEach(gadget -> {

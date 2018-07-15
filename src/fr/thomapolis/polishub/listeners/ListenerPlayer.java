@@ -105,6 +105,11 @@ public class ListenerPlayer implements Listener {
 			
 			if(event.getItem() != null && event.getItem().getType() != null) {
 				
+				if(!event.getItem().hasItemMeta()) {
+					
+					return;
+				}
+				
 				if(polisHub.getItemEffectType().isItemEffect(event.getItem())) {
 					
 					ItemEffect itemEffect = polisHub.getItemEffectType().getItemEffect(event.getItem());
@@ -112,6 +117,8 @@ public class ListenerPlayer implements Listener {
 					
 					event.setCancelled(true);
 				}
+				
+				
 				
 			}
 			

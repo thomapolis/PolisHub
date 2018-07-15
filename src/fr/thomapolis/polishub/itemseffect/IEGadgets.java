@@ -6,6 +6,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 
 import fr.thomapolis.polishub.gui.GUIGadget;
 
@@ -57,7 +58,9 @@ public class IEGadgets extends ItemEffect {
 	public void onClickInventory(Player player) {
 		
 		GUIGadget gui = new GUIGadget();
-		player.openInventory(gui.getInventory());
+		Inventory inv = gui.getInventory();
+		gui.setupGadget(inv, player);
+		player.openInventory(inv);
 
 	}
 

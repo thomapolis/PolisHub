@@ -2,10 +2,13 @@ package fr.thomapolis.polishub.gui;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import fr.thomapolis.polishub.PolisHub;
+import fr.thomapolis.polishub.gadgets.GadgetPaintBallGun;
 import fr.thomapolis.polishub.itemseffect.IEBackGUI;
 import fr.thomapolis.polishub.itemseffect.IEClearGadget;
 import fr.thomapolis.polishub.itemseffect.IECloseGUI;
@@ -42,6 +45,13 @@ public class GUIGadget extends GUI {
 		
 		IEBackGUI ieBG = new IEBackGUI();
 		inventory.setItem(53, ieBG.getItem());
+		
+	}
+	
+	public void setupGadget(Inventory inventory, Player player) {
+		
+		GadgetPaintBallGun gPBG = new GadgetPaintBallGun();
+		inventory.setItem(10, gPBG.getItemGadget(PolisHub.getAPI().getPolisPlayer(player)));
 		
 	}
 

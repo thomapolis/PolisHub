@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import fr.thomapolis.polishub.gadgets.Gadget;
+import fr.thomapolis.polishub.gadgets.GadgetPaintBallGun;
 
 public class GadgetType {
 
@@ -23,7 +24,7 @@ public class GadgetType {
 	
 	public void register() {
 		
-		
+		this.gadgets.add(new GadgetPaintBallGun());
 		
 	}
 	

@@ -26,6 +26,7 @@ public class PolisHub extends JavaPlugin {
 		//Init
 		setPrefix(ChatColor.GRAY+"["+ChatColor.GREEN+"PolisHub"+ChatColor.GRAY+"] ");
 		ieType = new ItemEffectType();
+		gadgeType = new GadgetType();
 		
 		
 		//Register

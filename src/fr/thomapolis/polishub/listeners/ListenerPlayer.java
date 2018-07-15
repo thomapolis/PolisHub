@@ -117,5 +117,4 @@ public class ListenerPlayer implements Listener {
 			
 		}
 	}
-	
 }

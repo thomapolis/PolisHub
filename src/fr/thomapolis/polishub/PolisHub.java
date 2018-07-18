@@ -1,7 +1,11 @@
 package fr.thomapolis.polishub;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import fr.thomapolis.poliscore.PolisCore;
@@ -83,5 +87,17 @@ public class PolisHub extends JavaPlugin {
 	public ProjectileGadgetType getProjectileType() {
 		
 		return this.pgType;
+	}
+	
+	public static List<Player> getActiveCosmeticPlayer(){
+		
+		List<Player> players = new ArrayList<>();
+		
+		for(Player online : Bukkit.getServer().getOnlinePlayers()) {
+			
+			players.add(online);
+		}
+		
+		return players;
 	}
 }

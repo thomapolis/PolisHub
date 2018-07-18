@@ -18,7 +18,10 @@ public class CommandPet implements CommandExecutor {
 		
 		if(sender instanceof Player) {
 			
-			Player player = (Player) sender;
+			for(Player p : PolisHub.getActiveCosmeticPlayer()) {
+				
+				p.sendMessage("test");
+			}
 			
 		}
 		

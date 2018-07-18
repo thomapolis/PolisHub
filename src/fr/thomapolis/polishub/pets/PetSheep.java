@@ -9,19 +9,20 @@ public class PetSheep implements IPet, IPetEvolutive {
 
 	@Override
 	public boolean baby() {
-		// XXX Auto-generated method stub
+		
 		return false;
 	}
 
 	@Override
 	public String name(Player player) {
-		// XXX Auto-generated method stub
-		return null;
+		
+		return "§7Mouton de "+player.getName();
 	}
 
 	@Override
 	public void spawn(Player player) {
-		// XXX Auto-generated method stub
+		
+		
 		
 	}
 

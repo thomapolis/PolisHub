@@ -11,11 +11,14 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerMoveEvent;
 
 import fr.thomapolis.poliscore.polisclass.PolisPlayer;
 import fr.thomapolis.polishub.PolisHub;
 import fr.thomapolis.polishub.itemseffect.IECosmetics;
 import fr.thomapolis.polishub.itemseffect.ItemEffect;
+import fr.thomapolis.polishub.type.PetType;
+import net.minecraft.server.v1_11_R1.Entity;
 
 public class ListenerPlayer implements Listener {
 
@@ -142,5 +145,17 @@ public class ListenerPlayer implements Listener {
 			}
 			
 		}
+	}
+	
+	@EventHandler
+	public void onPlayerMove(PlayerMoveEvent event) {
+		
+		if(PetType.Pets.containsKey(event.getPlayer().getName())) {
+			
+			Entity pet = PetType.Pets.get(event.getPlayer().getName());
+			
+			
+		}
+		
 	}
 }

@@ -6,6 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import fr.thomapolis.polishub.PolisHub;
+import fr.thomapolis.polishub.pets.PetSheep;
 
 public class CommandPet implements CommandExecutor {
 
@@ -18,10 +19,10 @@ public class CommandPet implements CommandExecutor {
 		
 		if(sender instanceof Player) {
 			
-			for(Player p : PolisHub.getActiveCosmeticPlayer()) {
-				
-				p.sendMessage("test");
-			}
+			Player player = (Player) sender;
+			
+			PetSheep pet = new PetSheep();
+			pet.spawn(player);
 			
 		}
 		

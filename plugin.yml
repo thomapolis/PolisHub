@@ -5,3 +5,4 @@ main: fr.thomapolis.polishub.PolisHub
 depends: [PolisCore]
 commands:
   money:
+  pet:

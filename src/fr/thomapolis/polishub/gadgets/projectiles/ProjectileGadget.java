@@ -15,6 +15,6 @@ public abstract class ProjectileGadget {
 	public void setup(Projectile entity) {
 		
 		entity.setCustomName(getName());
-		
+		entity.setCustomNameVisible(true);
 	}
 }

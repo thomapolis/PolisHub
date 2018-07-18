@@ -6,6 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import fr.thomapolis.poliscore.PolisCore;
 import fr.thomapolis.polishub.commands.CommandMoney;
+import fr.thomapolis.polishub.commands.CommandPet;
 import fr.thomapolis.polishub.listeners.ListenerPlayer;
 import fr.thomapolis.polishub.listeners.ListenerProjectile;
 import fr.thomapolis.polishub.type.GadgetType;
@@ -53,6 +54,7 @@ public class PolisHub extends JavaPlugin {
 	public void registerCommands() {
 		
 		getCommand("money").setExecutor(new CommandMoney(this));
+		getCommand("pet").setExecutor(new CommandPet(this));
 		
 	}
 	

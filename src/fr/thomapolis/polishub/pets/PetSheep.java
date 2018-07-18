@@ -36,7 +36,8 @@ public class PetSheep implements IPet, IPetEvolutive {
 		sheep.setCustomNameVisible(true);
 		sheep.setLocation(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ(), 0, 0);
 		
-		PacketPlayOutSpawnEntity packet = new PacketPlayOutSpawnEntity(sheep, 1);
+		
+		PacketPlayOutSpawnEntity packet = new PacketPlayOutSpawnEntity(sheep, 2);
 		
 		for(Player active : PolisHub.getActiveCosmeticPlayer()) {
 			

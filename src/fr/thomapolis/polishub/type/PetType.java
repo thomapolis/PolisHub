@@ -6,7 +6,7 @@ import org.bukkit.entity.Entity;
 
 public class PetType {
 
-public static HashMap<String,Entity> Pets = new HashMap<String, Entity>();
+	public static HashMap<String,Entity> Pets = new HashMap<String, Entity>();
 	
 	public PetType() {
 		

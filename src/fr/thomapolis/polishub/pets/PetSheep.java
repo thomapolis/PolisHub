@@ -34,7 +34,7 @@ public class PetSheep implements IPet, IPetEvolutive {
 	@Override
 	public void spawn(Player player) {
 		
-		sheep = new EntityCustomSheep(player.getWorld());
+		sheep = new EntityCustomSheep(player.getWorld(), player);
 		
 		sheep.setCustomName(name(player));
 		sheep.setCustomNameVisible(true);

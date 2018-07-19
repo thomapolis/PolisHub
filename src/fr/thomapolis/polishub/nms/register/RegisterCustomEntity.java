@@ -1,7 +1,6 @@
 package fr.thomapolis.polishub.nms.register;
 
 import java.lang.reflect.Field;
-import java.util.Map;
 
 import org.bukkit.Location;
 import org.bukkit.craftbukkit.v1_11_R1.entity.CraftPlayer;
@@ -36,7 +35,7 @@ public enum RegisterCustomEntity {
         this.key = new MinecraftKey(name);
         this.oldKey = EntityTypes.b.b(nmsClass);
         
-        addToMaps(customClass, name, id);
+        //addToMaps(customClass, name, id);
     }
 
     public static void registerEntities() { for (RegisterCustomEntity ce : RegisterCustomEntity.values()) ce.register(); }
@@ -102,10 +101,10 @@ public enum RegisterCustomEntity {
     private static void addToMaps(Class clazz, String name, int id) {
         //getPrivateField is the method from above.
         //Remove the lines with // in front of them if you want to override default entities (You'd have to remove the default entity from the map first though).
-        ((Map)getPrivateField("c", net.minecraft.server.v1_11_R1.EntityTypes.class, null)).put(name, clazz);
-        ((Map)getPrivateField("d", net.minecraft.server.v1_11_R1.EntityTypes.class, null)).put(clazz, name);
+        //((Map)getPrivateField("c", net.minecraft.server.v1_11_R1.EntityTypes.class, null)).put(name, c);
+        //((Map)getPrivateField("d", net.minecraft.server.v1_11_R1.EntityTypes.class, null)).put(clazz, name);
         //((Map)getPrivateField("e", net.minecraft.server.v1_7_R4.EntityTypes.class, null)).put(Integer.valueOf(id), clazz);
-        ((Map)getPrivateField("f", net.minecraft.server.v1_11_R1.EntityTypes.class, null)).put(clazz, Integer.valueOf(id));
+        //((Map)getPrivateField("f", net.minecraft.server.v1_11_R1.EntityTypes.class, null)).put(clazz, Integer.valueOf(id));
         //((Map)getPrivateField("g", net.minecraft.server.v1_7_R4.EntityTypes.class, null)).put(name, Integer.valueOf(id));
     }
     

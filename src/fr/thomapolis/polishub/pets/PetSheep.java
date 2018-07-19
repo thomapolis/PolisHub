@@ -13,7 +13,6 @@ import fr.thomapolis.polishub.api.IPet;
 import fr.thomapolis.polishub.api.IPetEvolutive;
 import fr.thomapolis.polishub.entities.EntityCustomSheep;
 import fr.thomapolis.polishub.type.PetType;
-import net.minecraft.server.v1_11_R1.EntitySheep;
 import net.minecraft.server.v1_11_R1.PacketPlayOutSpawnEntityLiving;
 import net.minecraft.server.v1_11_R1.WorldServer;
 
@@ -59,8 +58,6 @@ public class PetSheep implements IPet, IPetEvolutive {
 		
 		Location location = player.getLocation();
 		
-		EntitySheep petSheep = (EntitySheep) pet;
-		
 		Random rnd = new Random();
 		int l = rnd.nextInt(6);
 		
@@ -91,18 +88,18 @@ public class PetSheep implements IPet, IPetEvolutive {
 			break;
 		}
 		
-		if(location.distanceSquared(petSheep.getBukkitEntity().getLocation()) > 100) {
+		if(location.distanceSquared(sheep.getBukkitEntity().getLocation()) > 100) {
 			
 			if(!player.isOnGround()) {
 				
 				return;
 			}
 			
-			petSheep.getBukkitEntity().teleport(location);
+			sheep.getBukkitEntity().teleport(location);
 		}
 		else {
 			
-			petSheep.getNavigation().a(location.getX(), location.getY(), location.getZ(), 1.2);
+			sheep.getNavigation().a(location.getX(), location.getY(), location.getZ(), 1.2);
 		}
 	}
 

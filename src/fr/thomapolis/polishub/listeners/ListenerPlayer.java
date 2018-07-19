@@ -153,8 +153,6 @@ public class ListenerPlayer implements Listener {
 		
 		if(PetType.Pets.containsKey(event.getPlayer().getName())) {
 			
-			event.getPlayer().sendMessage("test");
-			
 			Entity pet = PetType.Pets.get(event.getPlayer().getName());
 			PetSheep sheep = new PetSheep();
 			sheep.followPlayer(event.getPlayer(), pet);

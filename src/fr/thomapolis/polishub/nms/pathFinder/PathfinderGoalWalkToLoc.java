@@ -1,39 +1,41 @@
 package fr.thomapolis.polishub.nms.pathFinder;
 
+import java.util.UUID;
+
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 
 import net.minecraft.server.v1_11_R1.EntityInsentient;
-import net.minecraft.server.v1_11_R1.Navigation;
 import net.minecraft.server.v1_11_R1.PathEntity;
 import net.minecraft.server.v1_11_R1.PathfinderGoal;
 
 public class PathfinderGoalWalkToLoc extends PathfinderGoal {
 	
-	private double speed;
-	
-	private EntityInsentient entity;
-	
-	private Location loc;
+	  private EntityInsentient creature;
+	  private PathEntity path;
+	  private UUID p;
 
-	private Navigation navigation;
-
-	public PathfinderGoalWalkToLoc(EntityInsentient entity, Location loc, double speed) {
-	    
-		this.entity = entity;
-	    this.loc = loc;
-	    this.navigation = (Navigation) this.entity.getNavigation();
-	    this.speed = speed;
-	}
-
-	public boolean a() {
-	     
-	   return true;
-	   
-	}
-	
-	public void c() {
-        PathEntity pathEntity = this.navigation.a(loc.getX(), loc.getY(), loc.getZ());
-
-        this.navigation.a(pathEntity, speed);
-    }
+	  public PathfinderGoalWalkToLoc(EntityInsentient creature, UUID p) {
+		  
+		 this.creature = creature;
+		 this.p = p;
+	  
+	  }
+	  
+	  @Override
+	  public boolean a() {
+		  
+		  if(Bukkit.getPlayer(p) == null) {
+			  
+			  return path != null;
+		  }
+		  
+		  Location targetLocation = Bukkit.getPlayer(p).getLocation();
+		  
+		  boolean flag = this.creature.getNavigation().i();
+		  
+		  
+		  return this.path != null;
+		  
+	  }
 }

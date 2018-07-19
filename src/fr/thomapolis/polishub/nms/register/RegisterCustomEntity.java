@@ -86,11 +86,12 @@ public enum RegisterCustomEntity {
     
     public static void spawnEntity(EntityLiving entity, Location loc, Player player) {
     	
+    	entity.setLocation(loc.getX(), loc.getY(), loc.getZ(), loc.getYaw(), loc.getPitch());
+    	
     	PacketPlayOutSpawnEntityLiving packet = new PacketPlayOutSpawnEntityLiving(entity);
     	
     	for(Player active : PolisHub.getActiveCosmeticPlayer()) {
 			
-    		entity.setLocation(loc.getX(), loc.getY(), loc.getZ(), loc.getYaw(), loc.getPitch());
 			((CraftPlayer) active).getHandle().playerConnection.sendPacket(packet);
 			
 		}

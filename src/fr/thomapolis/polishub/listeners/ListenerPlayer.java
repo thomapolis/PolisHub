@@ -2,6 +2,7 @@ package fr.thomapolis.polishub.listeners;
 
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
+import org.bukkit.entity.Creature;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -16,7 +17,6 @@ import org.bukkit.event.player.PlayerMoveEvent;
 
 import fr.thomapolis.poliscore.polisclass.PolisPlayer;
 import fr.thomapolis.polishub.PolisHub;
-import fr.thomapolis.polishub.entities.EntityCustomSheep;
 import fr.thomapolis.polishub.itemseffect.IECosmetics;
 import fr.thomapolis.polishub.itemseffect.ItemEffect;
 import fr.thomapolis.polishub.pets.PetSheep;
@@ -154,9 +154,16 @@ public class ListenerPlayer implements Listener {
 		
 		if(PetType.Pets.containsKey(event.getPlayer().getName())) {
 			
-			Entity pet = PetType.Pets.get(event.getPlayer().getName());
-			PetSheep sheep = new PetSheep((EntityCustomSheep) pet);
-			sheep.followPlayer(event.getPlayer(), pet);
+			Entity entity = PetType.Pets.get(event.getPlayer().getName());
+			if(!(entity instanceof Creature)) {
+				
+				return;
+			}
+			
+			Creature creature = (Creature) entity;
+			
+			PetSheep sheep = new PetSheep();
+			sheep.followPlayer(event.getPlayer(), creature);
 			
 		}
 		

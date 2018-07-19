@@ -4,7 +4,10 @@ import java.util.Random;
 
 import org.bukkit.Location;
 import org.bukkit.craftbukkit.v1_11_R1.CraftWorld;
+import org.bukkit.craftbukkit.v1_11_R1.entity.CraftCreature;
+import org.bukkit.craftbukkit.v1_11_R1.entity.CraftEntity;
 import org.bukkit.craftbukkit.v1_11_R1.entity.CraftPlayer;
+import org.bukkit.entity.Creature;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 
@@ -20,7 +23,16 @@ public class PetSheep implements IPet, IPetEvolutive {
 
 	private EntityCustomSheep sheep;
 	
-	public PetSheep(EntityCustomSheep sheep) {
+	public PetSheep() {
+		
+		
+	}
+	
+	public PetSheep(Entity entity) {
+		
+		net.minecraft.server.v1_11_R1.Entity ent = ((CraftEntity) entity).getHandle();
+		EntityCustomSheep sheep = (EntityCustomSheep)ent;
+		
 		this.sheep = sheep;
 	}
 	
@@ -42,6 +54,7 @@ public class PetSheep implements IPet, IPetEvolutive {
 		WorldServer worldServer = ((CraftWorld) player.getWorld()).getHandle();
 		
 		sheep = new EntityCustomSheep(worldServer);
+		
 		sheep.setCustomName(name(player));
 		sheep.setCustomNameVisible(true);
 		sheep.setLocation(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ(), 0, 0);
@@ -58,7 +71,7 @@ public class PetSheep implements IPet, IPetEvolutive {
 	}
 
 	@Override
-	public void followPlayer(Player player, Entity pet) {
+	public void followPlayer(Player player, Creature creature) {
 		
 		Location location = player.getLocation();
 		
@@ -92,18 +105,18 @@ public class PetSheep implements IPet, IPetEvolutive {
 			break;
 		}
 		
-		if(location.distanceSquared(sheep.getBukkitEntity().getLocation()) > 100) {
+		if(location.distanceSquared(creature.getLocation()) > 100) {
 			
 			if(!player.isOnGround()) {
 				
 				return;
 			}
 			
-			sheep.getBukkitEntity().teleport(location);
+			creature.teleport(location);
 		}
 		else {
 			
-			sheep.getNavigation().a(location.getX(), location.getY(), location.getZ(), 1.2);
+			((CraftCreature)creature).getHandle().getNavigation().a(location.getX(), location.getY(), location.getZ(), 1.2);
 		}
 	}
 

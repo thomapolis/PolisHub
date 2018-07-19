@@ -17,6 +17,7 @@ import fr.thomapolis.poliscore.polisclass.PolisPlayer;
 import fr.thomapolis.polishub.PolisHub;
 import fr.thomapolis.polishub.itemseffect.IECosmetics;
 import fr.thomapolis.polishub.itemseffect.ItemEffect;
+import fr.thomapolis.polishub.pets.PetSheep;
 import fr.thomapolis.polishub.type.PetType;
 import net.minecraft.server.v1_11_R1.Entity;
 
@@ -152,8 +153,11 @@ public class ListenerPlayer implements Listener {
 		
 		if(PetType.Pets.containsKey(event.getPlayer().getName())) {
 			
-			Entity pet = PetType.Pets.get(event.getPlayer().getName());
+			event.getPlayer().sendMessage("test");
 			
+			Entity pet = PetType.Pets.get(event.getPlayer().getName());
+			PetSheep sheep = new PetSheep();
+			sheep.followPlayer(event.getPlayer(), pet);
 			
 		}
 		

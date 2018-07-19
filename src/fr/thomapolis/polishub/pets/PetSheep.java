@@ -20,6 +20,10 @@ public class PetSheep implements IPet, IPetEvolutive {
 
 	private EntityCustomSheep sheep;
 	
+	public PetSheep(EntityCustomSheep sheep) {
+		this.sheep = sheep;
+	}
+	
 	@Override
 	public boolean baby() {
 		

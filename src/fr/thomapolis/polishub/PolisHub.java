@@ -13,6 +13,7 @@ import fr.thomapolis.polishub.commands.CommandMoney;
 import fr.thomapolis.polishub.commands.CommandPet;
 import fr.thomapolis.polishub.listeners.ListenerPlayer;
 import fr.thomapolis.polishub.listeners.ListenerProjectile;
+import fr.thomapolis.polishub.nms.register.RegisterCustomEntity;
 import fr.thomapolis.polishub.type.GadgetType;
 import fr.thomapolis.polishub.type.ItemEffectType;
 import fr.thomapolis.polishub.type.ProjectileGadgetType;
@@ -40,9 +41,16 @@ public class PolisHub extends JavaPlugin {
 		//Register
 		registerCommands();
 		registerEvents();
+		RegisterCustomEntity.registerEntities();
 		
 		getServer().getConsoleSender().sendMessage(getPrefix()+"PolisHub is enable !");
 		
+	}
+	
+	@Override
+	public void onDisable() {
+		
+		RegisterCustomEntity.unregisterEntities();
 	}
 	
 	public static String getPrefix() {

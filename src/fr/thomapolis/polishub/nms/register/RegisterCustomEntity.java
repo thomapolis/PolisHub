@@ -8,7 +8,7 @@ import net.minecraft.server.v1_11_R1.MinecraftKey;
 
 public enum RegisterCustomEntity {
 
-	SHEEP("Sheep", 54, EntitySheep.class, EntityCustomSheep.class);
+	SHEEP("Sheep", 91, EntitySheep.class, EntityCustomSheep.class);
 	
 	private String name;
     private int id;

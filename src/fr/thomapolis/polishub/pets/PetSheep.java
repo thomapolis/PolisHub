@@ -3,12 +3,9 @@ package fr.thomapolis.polishub.pets;
 import java.util.Random;
 
 import org.bukkit.Location;
-import org.bukkit.craftbukkit.v1_11_R1.CraftWorld;
 import org.bukkit.craftbukkit.v1_11_R1.entity.CraftCreature;
-import org.bukkit.craftbukkit.v1_11_R1.entity.CraftEntity;
 import org.bukkit.craftbukkit.v1_11_R1.entity.CraftPlayer;
 import org.bukkit.entity.Creature;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 
 import fr.thomapolis.polishub.PolisHub;
@@ -17,24 +14,10 @@ import fr.thomapolis.polishub.api.IPetEvolutive;
 import fr.thomapolis.polishub.entities.EntityCustomSheep;
 import fr.thomapolis.polishub.type.PetType;
 import net.minecraft.server.v1_11_R1.PacketPlayOutSpawnEntityLiving;
-import net.minecraft.server.v1_11_R1.WorldServer;
 
 public class PetSheep implements IPet, IPetEvolutive {
 
 	private EntityCustomSheep sheep;
-	
-	public PetSheep() {
-		
-		
-	}
-	
-	public PetSheep(Entity entity) {
-		
-		net.minecraft.server.v1_11_R1.Entity ent = ((CraftEntity) entity).getHandle();
-		EntityCustomSheep sheep = (EntityCustomSheep)ent;
-		
-		this.sheep = sheep;
-	}
 	
 	@Override
 	public boolean baby() {
@@ -51,9 +34,7 @@ public class PetSheep implements IPet, IPetEvolutive {
 	@Override
 	public void spawn(Player player) {
 		
-		WorldServer worldServer = ((CraftWorld) player.getWorld()).getHandle();
-		
-		sheep = new EntityCustomSheep(worldServer);
+		sheep = new EntityCustomSheep(player.getWorld());
 		
 		sheep.setCustomName(name(player));
 		sheep.setCustomNameVisible(true);

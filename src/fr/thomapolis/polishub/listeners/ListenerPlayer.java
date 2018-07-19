@@ -156,7 +156,7 @@ public class ListenerPlayer implements Listener {
 			
 			Entity entity = PetType.Pets.get(event.getPlayer().getName());
 			if(!(entity instanceof Creature)) {
-				
+				event.getPlayer().sendMessage("test");
 				return;
 			}
 			

@@ -21,7 +21,7 @@ public class CommandPet implements CommandExecutor {
 			
 			Player player = (Player) sender;
 			
-			PetSheep pet = new PetSheep(player);
+			PetSheep pet = new PetSheep();
 			pet.spawn(player);
 			
 		}

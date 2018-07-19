@@ -2,6 +2,7 @@ package fr.thomapolis.polishub.listeners;
 
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -19,7 +20,6 @@ import fr.thomapolis.polishub.itemseffect.IECosmetics;
 import fr.thomapolis.polishub.itemseffect.ItemEffect;
 import fr.thomapolis.polishub.pets.PetSheep;
 import fr.thomapolis.polishub.type.PetType;
-import net.minecraft.server.v1_11_R1.Entity;
 
 public class ListenerPlayer implements Listener {
 

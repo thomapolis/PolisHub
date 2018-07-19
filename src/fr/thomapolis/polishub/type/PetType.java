@@ -2,7 +2,7 @@ package fr.thomapolis.polishub.type;
 
 import java.util.HashMap;
 
-import net.minecraft.server.v1_11_R1.Entity;
+import org.bukkit.entity.Entity;
 
 public class PetType {
 

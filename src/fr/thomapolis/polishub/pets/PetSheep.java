@@ -5,20 +5,21 @@ import java.util.Random;
 import org.bukkit.Location;
 import org.bukkit.craftbukkit.v1_11_R1.CraftWorld;
 import org.bukkit.craftbukkit.v1_11_R1.entity.CraftPlayer;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 
 import fr.thomapolis.polishub.PolisHub;
 import fr.thomapolis.polishub.api.IPet;
 import fr.thomapolis.polishub.api.IPetEvolutive;
+import fr.thomapolis.polishub.entities.EntityCustomSheep;
 import fr.thomapolis.polishub.type.PetType;
-import net.minecraft.server.v1_11_R1.Entity;
 import net.minecraft.server.v1_11_R1.EntitySheep;
 import net.minecraft.server.v1_11_R1.PacketPlayOutSpawnEntityLiving;
 import net.minecraft.server.v1_11_R1.WorldServer;
 
 public class PetSheep implements IPet, IPetEvolutive {
 
-	private EntitySheep sheep;
+	private EntityCustomSheep sheep;
 	
 	@Override
 	public boolean baby() {
@@ -37,11 +38,10 @@ public class PetSheep implements IPet, IPetEvolutive {
 		
 		WorldServer worldServer = ((CraftWorld) player.getWorld()).getHandle();
 		
-		sheep = new EntitySheep(worldServer);
+		sheep = new EntityCustomSheep(worldServer);
 		sheep.setCustomName(name(player));
 		sheep.setCustomNameVisible(true);
 		sheep.setLocation(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ(), 0, 0);
-		sheep.setAI(true);
 		
 		PacketPlayOutSpawnEntityLiving packet = new PacketPlayOutSpawnEntityLiving(sheep);
 		
@@ -51,7 +51,7 @@ public class PetSheep implements IPet, IPetEvolutive {
 			
 		}
 		
-		PetType.Pets.put(player.getName(), sheep);
+		PetType.Pets.put(player.getName(), sheep.getBukkitEntity());
 	}
 
 	@Override

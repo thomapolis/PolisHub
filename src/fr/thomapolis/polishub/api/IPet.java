@@ -1,8 +1,8 @@
 package fr.thomapolis.polishub.api;
 
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 
-import net.minecraft.server.v1_11_R1.Entity;
 
 public interface IPet {
 

@@ -6,8 +6,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import fr.thomapolis.polishub.PolisHub;
-import fr.thomapolis.polishub.entities.EntityCustomSheep;
-import fr.thomapolis.polishub.nms.register.RegisterCustomEntity;
 
 public class CommandPet implements CommandExecutor {
 
@@ -22,7 +20,7 @@ public class CommandPet implements CommandExecutor {
 			
 			Player player = (Player) sender;
 			
-			RegisterCustomEntity.spawnEntity(new EntityCustomSheep(player.getWorld(), player), player.getLocation(), player);
+			//RegisterCustomEntity.spawnEntity(new EntityCustomSheep(player.getWorld(), player), player.getLocation(), player);
 			
 		}
 		

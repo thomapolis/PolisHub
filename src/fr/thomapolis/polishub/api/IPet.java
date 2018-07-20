@@ -10,6 +10,8 @@ import org.bukkit.entity.Player;
 public interface IPet {
 
 	public String getName();
+
+	public IPetEntity getPetEntity();
 	
 	public Creature getCraftPet();
 	
